@@ -10,17 +10,22 @@
         <body>
             <header>
                 <a class="skip-main" href="#main">Skip to Main Content</a>
-                <div class="main-nav">
                     <nav>
-                        <ul>
-                            <li><a href = "index.html">Home</a></li>
-                            <li class ="active"><a href = "pets.html">Pets</a></li>
-                            <li><a href = "recipes.html">Recipes</a></li>
-                            <li><a href = "travel.html">Travel</a></li>
-                        </ul>
+                        <div id="mySideMenu" class="sideMenu">
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+                            <ul>
+                                <li><a href = "index.html">Home</a></li>
+                                <li class ="active"><a href = "pets.html">Pets</a></li>
+                                <li><a href = "recipes.html">Recipes</a></li>
+                                <li><a href = "travel.html">Travel</a></li>
+                            </ul>
+                        </div>
                     </nav>
-                    <h1 class="main-head">Pets</h1>
-                </div>
+                    <h1 class="main-head">
+                        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                        Pets
+                    </h1>
+            
             </header>
 
             <main id="main">
@@ -201,6 +206,20 @@
                 </div>
             </main>
             
+            <script>
+                function openNav() {
+                    document.getElementById("mySideMenu").style.width="250px";
+                    document.getElementById("main").style.marginLeft = "250px";
+                    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+                }
+        
+                function closeNav() {
+                    document.getElementById("mySideMenu").style.width = "0";
+                    document.getElementById("main").style.marginLeft= "0";
+                    document.body.style.backgroundColor = "white";
+                }
+            </script>
+
         </body>
 
 </html>

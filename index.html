@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/html5reset.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Home</title>
 </head>
@@ -10,14 +11,21 @@
     <header>
     <a class="skip-main" href = "#main">Skip to Main Content</a>
         <nav>
-            <ul>
-                <li class="active"><a href = "index.html">Home</a></li>
-                <li><a href = "pets.html">Pets</a></li>
-                <li><a href = "recipes.html">Recipes</a></li>
-                <li><a href = "travel.html">Travel</a></li>
-            </ul>
+            <div id="mySideMenu" class="sideMenu">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+                <ul>
+                    <li class="active"><a href = "index.html">Home</a></li>
+                    <li><a href = "pets.html">Pets</a></li>
+                    <li><a href = "recipes.html">Recipes</a></li>
+                    <li><a href = "travel.html">Travel</a></li>
+                </ul>
+            </div>
         </nav>
-        <h1>Home</h1>
+        
+        <h1>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
+            Home
+        </h1>
     </header>
 
     <main id="main">
@@ -29,5 +37,19 @@
 
     </main>
     
+    <script>
+        function openNav() {
+            document.getElementById("mySideMenu").style.width="250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySideMenu").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+
 </body>
 </html>

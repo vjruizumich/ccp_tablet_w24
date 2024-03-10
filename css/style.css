@@ -48,16 +48,16 @@ video {
 /* font styles */
 a {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-left: 10px;
+    /* margin-left: 100px; */
 }
 
 h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    width: 100%;
     padding: 10px 10px;
     background-color: grey;
     color: white;
     margin-top: 0;
+    font-size: 2em;
 }
 
 h2 {
@@ -72,7 +72,9 @@ h3 {
 
 p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-left: 10px;
+    padding-left: 16px;
+    padding-top: 16px;
+    padding-right: 16px;
 }
 
 ul {
@@ -125,52 +127,59 @@ body {
 }
 
 /* navigation style */
-nav {
-    background-color: black;
-    width: 100%;
-    margin: 0;
-}
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-nav ul li {
-    display: block;
-    margin-bottom: 0px;
+.sideMenu {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
 }
 
-nav ul li a {
-    display: block;
+#mySideMenu a {
+    padding: 8px 8px 8px 32px;
     text-decoration: none;
-    padding: 15px 25px;
-    font-size: 18px;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+#mySideMenu li a:hover {
     color: aqua;
-    background-color: black;
-    transition: background-color 0.3s;
-}
-
-nav ul li.active a {
-    background-color: aqua;
-    color: black;
-    font-weight: bolder;
-    text-decoration: underline;
-}
-
-nav ul li a:hover {
-    color: black;
-    background-color: aqua;
     text-decoration: underline;
     font-weight: bolder;
+}
+
+#mySideMenu a:hover {
+    color: aqua;
+}
+
+.sideMenu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+}
+
+/* tablet styling */
+@media only screen and (min-width: 768px) {
+
 }
 
 /* desktop nav styling */
 
 @media only screen and (min-width: 601px) {
-    nav ul {
+    /* nav ul {
         display: inline-block;
         text-align: left;
     }
@@ -178,7 +187,7 @@ nav ul li a:hover {
     nav ul li {
         display: inline-block;
         margin-bottom: 0px;
-    }
+    } */
 
     .grid-container {
         display: grid;
