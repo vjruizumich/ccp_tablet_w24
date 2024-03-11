@@ -221,7 +221,7 @@ body {
 @media only screen and (min-width: 768px) {
     .grid-container {
         display: grid;
-        grid-template-columns: 2fr 3fr;
+        grid-template-columns: 3fr 2fr;
         gap: 10px;
         margin-bottom: 75px;
     }
@@ -244,7 +244,7 @@ body {
     }
 
     .travelText {
-        font-size: 125%;
+        font-size: medium;
     }
 
     h3 {
@@ -275,7 +275,7 @@ body {
     }
 }
 
-@media only screen and (min-width: 801px) {
+@media only screen and (min-width: 1920px) {
     .grid-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
